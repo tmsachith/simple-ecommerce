@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>E-Commerce Inventory Management System</h1>
+
+        <div class="form-section">
+            <h2>Add New Product</h2>
+            <form id="productForm">
+                <label for="productId">Product ID:</label>
+                <input type="text" id="productId" required><br>
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" required><br>
+                <label for="productPrice">Price:</label>
+                <input type="number" id="productPrice" required><br>
+                <label for="productQuantity">Quantity:</label>
+                <input type="number" id="productQuantity" required><br>
+                <label for="productCategory">Category:</label>
+                <input type="text" id="productCategory" required><br>
+                <button type="button" onclick="addProduct()">Add Product</button>
+            </form>
+        </div>
+
+        <div class="inventory-section">
+            <h2>Product Inventory</h2>
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Price ($)</th>
+                        <th>Quantity</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody id="productList"></tbody>
+            </table>
+        </div>
+
+        <div class="sorting-section">
+            <h2>Sort Products</h2>
+            <button onclick="sortPrice()">Sort by Price (Descending)</button>
+            <button onclick="sortName()">Sort by Name (Alphabetical)</button>
+            <button onclick="sortQuantity()">Sort by Quantity (Ascending)</button>
+        </div>
+
+        <div class="search-section">
+            <h2>Search Product by ID</h2>
+            <input type="text" id="searchId" placeholder="Enter Product ID">
+            <button onclick="searchProductById()">Search</button>
+            <p id="searchResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
